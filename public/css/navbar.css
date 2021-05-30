@@ -1,0 +1,242 @@
+nav{
+       display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2px 0px;
+    background: white;
+}
+
+.nav-first{
+    display: flex;
+    align-items: center;
+}
+
+.insta-icon{
+
+}
+
+.insta-icon img{
+    width: 36px;
+}
+
+.insta-name{
+
+}
+
+.insta-name img{
+    margin: 0px 5px;
+    height: 50px;
+}
+
+
+
+.nav-second{
+
+}
+
+.nav-second input{
+    text-align: center;
+    height: 31px;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nav-third{
+display: flex;
+}
+
+.nav-icons{
+margin: 5px 11px;
+}
+.nav-icons img{
+	width: 26px;
+}
+
+
+.upload_file_container{
+        position: fixed;
+    top: 50%;
+    left: 42%;
+    cursor: pointer;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.upload_file_box{
+      background-color: white;
+    text-align: center;
+    font-family: system-ui;
+    font-weight: bold;
+    width: 255px;
+    border-bottom: 1px solid;
+    padding: 6px 0px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.upload_image_main{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.upload_image_box{
+    background: white;
+    padding: 22px;
+}
+.upload_image_box_select_image{
+     width: 806px;
+    height: 463px;
+    border: 2px dashed deeppink;
+    display: grid;
+    place-items: center;
+    /*background-color: #cccccc;*/
+    font-family: sans-serif;
+    overflow: scroll;
+}
+.upload_image_box_select_image h2{
+
+}
+.upload_image_box_select_image img{
+width: 99%;
+}
+.upload_image_box_select_image input{
+
+}
+
+.upload_image_box_btn{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0px;
+}
+
+.upload_image_box_btn button{
+    width: 38px;
+    height: 35px;
+    border: navajowhite;
+    margin: 1pc 7px;
+    background-color: deeppink;
+    color: white;
+    transform: scale(1.2);
+    font-weight: bolder;
+}
+
+
+.upload_image_data{
+    display: flex;
+    flex-direction: column;
+    padding: 1px 16px;
+}
+
+.upload_image_data label{
+    margin: 10px 0px;
+    font-family: system-ui;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+.upload_image_data input{
+    font-family: system-ui;
+    font-size: 1.01rem;
+    text-align: center;
+}
+
+.upload_image_data textarea{
+    font-family: system-ui;
+    font-size: 1.01rem;
+    text-align: center;
+    height: 109px;
+}
+
+.upload_story_main{
+   position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload_story_box{
+        background: white;
+    padding: 22px;
+}
+
+.upload_story_container button{
+    width: 38px;
+    height: 35px;
+    border: navajowhite;
+    margin: 1pc 7px;
+    background-color: deeppink;
+    color: white;
+    transform: scale(1.2);
+    font-weight: bolder;
+}
+
+
+.upload_story_function{
+    display: flex;
+    flex-direction: column;
+}
+
+.upload_story_function label{
+        margin: 10px 0px;
+    font-family: system-ui;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.upload_story_function input{
+    height: 34px;
+    font-family: system-ui;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+
+.mobile{
+display: flex;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0%;
+    z-index: 4;
+    background: white;
+    justify-content: space-around;
+    border: 1px solid #e0d8d8;
+}
+
+.mobile_box{
+    
+}
+
+.mobile_box img{
+        width: 34px;
+}
+
+@media (max-width: 650px) {
+    
+    .nav-first{
+        display:none;
+    }
+    .nav-third{
+        display:none;
+
+    }
+
+    .mobile{
+        display:flex !important;
+    }
+
+    nav{
+        justify-content: center;
+    }
+
+
+}

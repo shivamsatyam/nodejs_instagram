@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Signin</title>
+	<link rel="stylesheet" type="text/css" href="/css/signin.css">
+
+	<style>
+.error_signin_data{
+
+	color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    position: relative;
+    padding: .75rem 1.25rem;
+    
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+
+</style>
+</head>
+<body>
+
+
+
+	
+
+	 <div class="error_signin_data">
+ 	<b></b>
+ </div>
+
+
+	<section class="signin">
+	
+		<form action="/signin" method="post" enctype="multipart/form-data">
+				
+			<div class="image">
+				<div class="image-select">
+					<img src="/img/w-logo-blue.png" alt="">
+				</div>
+
+				<input type="file" required  id="file" style="display:none" name="file">
+			</div>
+
+			<label for="input_name">Username</label>
+			<input type="text" id="input_name"  name="username" minlength="10">
+			
+			<label for="input_email">Email</label>
+			<input type="email" required  id="input_email" name="email" minlength="10">
+
+			<label for="input_password">Password</label>
+			<input type="password"  required id="input_password" name="password" minlength="10">
+
+				<div style="    display: flex;
+    justify-content: flex-end; cursor: pointer;">
+					<button type="submit">Sign In</button>
+				</div>
+		</form>
+	</section>
+
+
+<script>
+
+
+let image_class = document.querySelector('.image-select')
+let image = image_class.querySelector('img')
+let file = document.getElementById('file')
+let form = document.querySelector('form')
+let name = document.getElementById('input_name')
+let email = document.getElementById('input_email')
+let password = document.getElementById('input_password')
+
+image_class.addEventListener('click',(e) => {
+  file.click()
+});
+
+
+file.addEventListener('change',(e)=>{
+	let file = e.target.files[0]
+	image.src = URL.createObjectURL(file)
+
+})
+
+
+form.addEventListener('submit',(e)=>{
+	e.preventDefault()
+	let file = document.getElementById('file').files[0].name
+
+	let image_array = ['png','jpg','gif','jpeg','bmp']
+	let split = file.split('.')
+
+	let last_name = split[split.length-1]
+
+	let trues = false
+
+	for (let i=0;i<image_array.length;i++){
+		item = String(image_array[i])
+
+		if(item==last_name){
+			console.log('item found')
+			trues = true 
+			break
+		}	
+	}
+
+	let fetch_data = {
+		method:'post',
+			headers:{
+				'Content-type':'application/json',
+			},
+			body:JSON.stringify({email:email.value})
+	}
+
+
+	let good = false
+
+	fetch('/findPerson',fetch_data).then((data)=>{
+		return data.json()
+	}).then((response)=>{
+		if(response.status){
+			good = true
+		}
+	})
+
+
+	if(trues & good){
+		let formData = new FormData()
+		formData.append('name',input_name.value)
+		formData.append('email',input_email.value)
+		formData.append('password',input_password.value)
+		formData.append('image',document.getElementById('file').files[0])
+
+		console.log(formData.get('name'))
+
+
+		params = {
+			method:'post',
+			headers:{
+				'Content-type':'application/json',
+			},
+			body:JSON.stringify(formData)
+		}
+
+
+		fetch('/signin',params).then((data)=>{
+			return data.json()
+		}).then((response)=>{
+			console.log(response)
+		})
+
+
+
+	}else{
+		alert("image type is not supported")
+	}
+
+
+})
+
+</script>
+
+</body>
+</html>

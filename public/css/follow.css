@@ -1,0 +1,100 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+
+
+.container{
+ 
+}
+
+
+.box{
+     margin: auto;
+    height: fit-content;
+    background-color: #f3f3f3;
+
+}
+
+
+.follow{
+
+}
+
+
+.follow_suggested{
+    max-width: 1200px;
+    margin: auto;
+    min-width: 10px;
+    padding: 13px;
+}
+
+.follow_suggested h2{
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 15px 1px;
+}
+
+
+.follow_suggested_box{
+display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 12px -1px;
+}
+
+
+.follow_suggested_first{
+    display: flex;
+    align-items: center;
+}
+
+
+.follow_suggested_image{
+
+}
+
+.follow_suggested_image img{
+        width: 56px;
+    height: 56px;
+    border-radius: 62px;
+    object-fit: cover;
+}
+
+.follow_suggested_name{
+margin: 1px 13px;
+}
+
+.follow_suggested_name cite{
+font-weight: bolder;
+    font-family: system-ui;
+    font-size: 18px;
+}
+
+.follow_suggested_name p{
+    font-family: system-ui;
+    color: grey;
+}
+
+
+.follow_suggested_second{
+
+}
+
+.follow_suggested_second button{
+width: 114px;
+    height: 31px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #178cea;
+    font-family: system-ui;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+

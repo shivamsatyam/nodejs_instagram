@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="/css/chat_index.css">
+	<link rel="stylesheet" type="text/css" href="/css/chat_responsive.css">
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body onload="load()" style="overflow:hidden;">
+	
+	<small style="display:none;" id="real_id"><%=real._id%></small>
+	<div class="main">
+		<div class="container">
+			<div class="sidebar">
+				<div class="sidebar_search">
+					
+					<div class="sidebar_search_input">
+						<input type="text" placeholder="Search person">
+					</div>
+					<div class="sidebar_search_cross">
+						<div class="sidebar_cross_child" style="transform: rotate(
+44deg
+);
+    margin: 5px 0px;"></div>
+						<div class="sidebar_cross_child" style="    transform: rotate(
+140deg
+);
+    margin: -9px 0px;"></div>
+					</div>
+
+				</div>
+
+				<div class="copy" style="display:none;">
+					copy your id
+				</div>
+
+
+				<div class="sidebar_add_chat" style="display:none;">
+					Add new chat
+					<small id="real" style="display:none;"><%=real.name%></small>
+				</div>
+
+                <div class="sidebar_chat_person">
+                	<%if(data!=null || data!=''){%>
+                		<%data.forEach((item)=>{%>
+                			<%if(data.name!='' || data.name!=null){%>
+                			<div class="sidebar_chat_box">
+                		<div class="sidebar_chat_box_image">
+                			<img src="<%=item.image%>" alt="">
+                		</div>
+                		<div class="sidebar_chat_box_data">
+                			<h2><%=item.name%></h2>
+                			<small style="display:none;"><%=item.follow_id%></small>
+                		</div>
+                	</div>
+                			<%}%>
+                		<%})%>
+                	<%}%>
+                </div>
+
+
+
+			</div>
+
+
+
+
+			<div class="chat">
+				<div class="chat_header">
+
+
+					<div class="chat_box">
+											<div class="hamburger">
+						<div class="hamburger-child"></div>
+						<div class="hamburger-child"></div>
+						<div class="hamburger-child"></div>
+					</div>
+
+					
+
+                		<div class="chat_box_image">
+                			<img src="<%=real.image%>" alt="">
+                		</div>
+                		<div class="chat_box_data">
+                			<h2>Add new chat</h2>
+                		</div>
+                	</div>
+				</div>
+
+				<div class="chat_main">
+					
+				
+				</div>
+
+				<div class="chat_input">
+					<form>
+						<div class="chat_input_input">
+							<input type="text" placeholder="Type your message">
+						</div>
+						<div class="chat_input_button">
+							<button type="submit"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M4.01 6.03l7.51 3.22-7.52-1 .01-2.22m7.5 8.72L4 17.97v-2.22l7.51-1M2.01 3L2 10l15 2-15 2 .01 7L23 12 2.01 3z"/></svg></button>	
+						</div>
+
+					</form>
+				</div>
+
+
+			</div>
+
+		</div>	
+	</div>
+
+</body>
+
+
+
+<script type="text/javascript" src="/js/index_function.js"></script>
+
+<script type="text/javascript" src="/js/socket_client.js">
+
+</script>
+
+
+	
+<script>
+function load () {
+		// body...
+		not()
+		sidebar_chat_box[0].click() 
+	}
+</script>	
+
+
+</html>

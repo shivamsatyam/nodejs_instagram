@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/follow.css">
+	<link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body>
+
+<%-include('upload_file.ejs')%>
+
+
+<div class="container">
+	<div class="box">
+		<%-include('navbar.ejs')%>
+		
+		<p style="display:none" id="user-id"><%=id%></p>
+
+		<div class="follow">
+			<div class="follow_suggested">
+				<h2>Suggested</h2>
+				
+
+
+				<%data.forEach((item)=>{%>
+					<%if(item._id!=id){%>
+						<div class="follow_suggested_box">
+					<div class="follow_suggested_first">
+							<div class="follow_suggested_image">
+							<img src="<%=item.image%>" alt="">
+						</div>
+						<div class="follow_suggested_name">
+							<cite><%=item.name%></cite>
+							<p><%=item.name%></p>
+						</div>
+					</div>
+
+					<div class="follow_suggested_second">
+						<small style="display:none;"><%=item._id%></small>
+						<button class="follow_suggested_btn">Follow</button>
+					</div>
+
+
+				</div>
+					<%}%>
+				<%})%>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<script>
+
+let user_id = document.getElementById('user-id').innerText
+let follow_suggested_box = document.querySelectorAll('.follow_suggested_box')
+
+let follow_suggested_btn = document.querySelectorAll('.follow_suggested_btn')
+
+follow_suggested_box.forEach((item) => {
+  let id = item.querySelector('small').innerText
+
+  console.log(id," ",user_id)
+  console.log(id==user_id)
+
+  if(id==user_id){
+  	item.style.display = 'none'
+  }
+
+})
+
+
+
+
+follow_suggested_btn.forEach((item) => {
+	
+  	item.addEventListener('click',(e) => {
+  		item.disabled = true
+  		let follow_id = item.parentNode.querySelector('small').innerText
+
+  		fetch(`/follow_user/${user_id}/${follow_id}`).then((data)=>{
+  			return data.json()
+  		}).then((response)=>{
+
+  			console.log(response)
+  		})
+
+
+	});
+})
+
+</script>
+
+</body>
+</html>
+
+

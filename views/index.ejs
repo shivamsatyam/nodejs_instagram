@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/index.css">
+	<link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body>
+
+
+
+<%-include('main.ejs')%>
+
+
+<div class="container">
+	<div class="box">
+		<%-include('navbar.ejs')%>
+
+
+<div class="index_following">
+
+	<%following.forEach((item)=>{%>
+		<div class="index_following_box">
+			<small style="display:none;"><%=item.follow_id%></small>
+			<img src="<%=item.image%>" alt="">
+			<cite><%=item.name%></cite>
+		</div>
+
+	<%})%>
+
+
+
+
+</div>
+	
+<div class="name" style="display:none"><%=name%></div>
+
+
+		<div class="index">
+		<%post.forEach((item)=>{%>
+
+				<div class="index_box">
+				<div class="index_box_top">
+					<div class="index_box_image">
+						<img src="<%=item.user_image%>" alt="">
+					</div>
+
+					<h2><%=item.name%></h2>
+					
+				</div>
+
+				<div class="index_box_medium">
+					<img src="/upload/<%=item.image%>" alt="">
+				</div>
+
+				<div class="index_box_bottom">
+					<div class="index_box_bottom_like_btn">
+						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
+					</div>
+					<div class="index_box_bottom_share">S</div>
+
+				</div>
+
+
+				<div class="index_box_bottom_like">
+					<%=item.likes%> likes
+				</div>
+
+				<div class="index_box_bottom_desc">
+					
+					<p><cite><%=item.name%> </cite>
+						<p><%=item.desc%></p>
+					</p>
+				</div>
+
+				<div class="index_box_bottom_comment">
+					<small style="display:none;"><%=item._id%></small>
+
+					<div class="index_box_bottom_comment_box">
+						<cite>Shivam</cite>
+						<p>Hello brother</p>
+					</div>
+				</div>
+
+<small style="display:none;">60b356da82450104fc8852a8</small>				<div class="index_box_bottom_add_post">
+					<span><img src="/img/emoji_emotions_black_24dp.svg" alt=""></span>
+					<input value='' type="text" placeholder="Add a comment...">
+					<button class="index_box_bottom_add_post_btn">Post</button>
+				</div>
+
+
+			</div>
+
+		<%})%>
+		</div>
+
+	</div>
+</div>
+	
+
+<script type="text/javascript" src="/js/home.js"></script>
+
+<script>
+
+let navbar_add_btn = document.getElementById('navbar_add_btn')
+let mobile_add = document.getElementById('mobile_add')
+
+let upload_file_container = document.querySelector('.upload_file_container')
+
+let upload_file_close = document.getElementById('upload_file_close')
+
+
+navbar_add_btn.addEventListener('click',(e) => {
+    upload_file_container.style.display = 'flex'
+});
+
+mobile_add.addEventListener('click',(e) => {
+    upload_file_container.style.display = 'flex'
+});
+
+upload_file_close.addEventListener('click',(e)=>{
+    upload_file_container.style.display = 'none'
+
+})
+
+
+
+
+</script>
+
+</body>
+</html>

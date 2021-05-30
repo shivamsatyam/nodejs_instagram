@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/profile.css">
+        <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body onload="after_load()">
+
+
+
+
+<div class="profile-id" style="display:none"><%=data._id%></div>
+
+
+
+<%-include('main.ejs')%>
+
+
+<div class="update_profile" style="display:none">
+        <form action="" class="profile_form">
+                <label for="name">Name</label>
+                <input type="text" name="name" required id="edit_profile_name" value="<%=data.name%>">
+
+                
+                <label for="name">About Your Self</label>
+                <textarea name="desc" required id="edit_profile_desc"></textarea>
+
+                <div class="form_btn">
+                        <button type="submit" id="edit_profile_save">&check;</button>
+                        <button id="edit_profile_cut">&#x2716;</button>
+                </div>
+
+
+        </form>
+</div>
+
+<%-include('upload_file.ejs')%>
+
+<div class="container">
+	<div class="box">
+                <%-include('navbar.ejs')%>
+
+	<div class="user">
+                        <div class="profile">
+                <div class="image">
+                        <img src="/img/download (5).jpeg" alt="">
+                </div>
+
+
+        <div class="info">
+                <div class="name">
+                        <h2 id="profile-name"><%=data.name%></h2>
+                        <button id="edit_profile_btn">Edit Profile</button>
+                </div>
+
+                <div class="about">
+                        <div class="posts">
+                                <div class="posts_num">104</div>
+                                <div class="posts_name">posts</div>
+                        </div>
+                        <div class="followers">
+                                <div class="posts_num">544</div>
+                                <div class="posts_name">followers</div>
+                        </div>
+                        <div class="following">
+                                <div class="posts_num">545</div>
+                                <div class="posts_name">following</div>
+                        </div>
+                </div>
+        </div>
+
+
+        </div>       
+        </div>
+
+
+
+
+        <div class="profile_user_data">
+                <div class="profile_user_data_type">
+                        <div class="profile_user_data_box" id="profile_post">Posts</div>
+                        <div class="profile_user_data_box" id="profile_story">Story</div>
+
+                </div>
+                 
+                 <div class="profile_user_data_posts">
+                
+
+                       
+                 </div>
+           <div class="profile_user_data_story">
+                     <div class="profile_user_data_story_box">
+                         <pre>
+                                 
+                         </pre>
+           
+                      </div>   
+                 </div>
+
+                        
+        </div>
+
+
+	</div>
+</div>
+
+<script src="/js/profile.js"></script>
+
+
+<script>
+
+let navbar_add_btn = document.getElementById('navbar_add_btn')
+let mobile_add = document.getElementById('mobile_add')
+
+let upload_file_container = document.querySelector('.upload_file_container')
+
+let upload_file_close = document.getElementById('upload_file_close')
+
+
+navbar_add_btn.addEventListener('click',(e) => {
+    upload_file_container.style.display = 'flex'
+});
+
+mobile_add.addEventListener('click',(e) => {
+    upload_file_container.style.display = 'flex'
+});
+
+upload_file_close.addEventListener('click',(e)=>{
+    upload_file_container.style.display = 'none'
+
+})
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+
+
+.container{
+
+}
+
+
+.box{
+      margin: auto;
+    height: fit-content;
+    background-color: #f3f3f3;
+
+}
+
+.profile{
+    display: flex;
+    background-color: #f3f3f3;
+    justify-content: space-evenly;
+    margin: 0px 0px;
+}
+
+
+.image{
+    flex: 0.4;
+    display: flex;
+    justify-content: flex-end;
+}
+.image img{
+border-radius: 145px;
+    width: 200px;
+    height: 200px;
+}
+
+.info{
+flex: 0.57;
+    margin-left: 62px;
+}
+
+.name{
+display: flex;
+}
+
+
+.name h2{
+	    margin: 0px 21px;
+    font-family: sans-serif;
+    font-weight: 200;
+}
+
+.name button{
+	    width: 108px;
+    border: none;
+    color: white;
+    background-color: #5fb5ff;
+}
+
+.about{
+display: flex;
+    margin: 10px 0px;
+}
+
+.followers{
+    display: flex;
+    margin: 1px 27px;
+    align-items: center;
+}
+
+.following{
+    display: flex;
+    align-items: center;
+}
+
+.posts{
+    display: flex;
+    margin-left: 19px;
+    align-items: center;
+}
+
+.posts_num{
+    margin-right: 4px;
+    font-weight: bold;
+    font-family: system-ui;
+}
+
+
+.posts_name{
+    font-family: system-ui;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.user{
+	padding: 23px 0px;
+}
+
+
+.update_profile{
+position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+95deg
+, #c53636, #a28a5c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 22px;
+}
+
+.profile_form label{
+    font-family: system-ui;
+    margin: 9px 0px;
+    font-weight: bold;
+    font-size: 1.24rem;
+}
+
+.profile_form input{
+    width: 422px;
+    margin: 1px 0px;
+    height: 33px;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.23rem;
+}
+
+.profile_form textarea{
+width: 422px;
+    margin: 1px 0px;
+    height: 137px;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.23rem;
+}
+
+.form_btn{
+    margin: 9px 0px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form_btn button{
+	    margin: 0px 4px;
+    width: 36px;
+    height: 34px;
+    border: navajowhite;
+    color: white;
+    background-color: seagreen;
+}
+
+
+.profile_user_data{
+      display: flex;
+    flex-direction: column;
+}
+
+.profile_user_data_type{
+    display: flex;
+    margin: 5px 0px;
+    justify-content: center;
+}
+
+.profile_user_data_box{
+    margin: 1px 5px;
+    font-family: system-ui;
+    font-weight: 500;
+    font-size: 1.23rem;
+    border: 2px solid orange;
+    color: orange;
+    padding: 1px 17px;
+    cursor: pointer;
+    transition:0.4s;
+}
+
+.profile_user_data_box:hover{
+    color:white;
+    background-color:orange;
+}
+
+.profile_user_data_posts{
+        max-width: 1700px;
+    min-width: 10px;
+    margin: auto;
+    margin-top: 29px;
+}
+.profile_user_data_posts_box{
+     display: inline-block;
+    margin: 11px 42px;
+    max-width: 453px;
+    min-width: 10px;
+    background: white;
+}
+.profile_user_data_posts_box img{
+       width: 450px;
+    height: 325px;
+    object-fit:cover;
+}
+
+.profile_user_data_story{
+display: flex;
+    flex-direction: column;
+}
+
+
+.profile_user_data_story_box{
+    font-family: system-ui;
+    height: 400px;
+    overflow: scroll;
+    padding: 1px 57px;
+    text-align: center;
+}
+
+
+.profile_user_data_posts_box_func{
+    display: flex;
+    flex-direction: column;
+    padding: 1px 19px;
+}
+
+
+
+
+.profile_user_data_posts_box_func h2{
+        font-family: system-ui;
+    font-size: 1.2rem;
+}
+
+
+
+
+.profile_user_data_posts_box_func p{
+        margin: 5px 0px;
+    font-family: system-ui;
+}
+
+.profile_user_data_posts_content{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile_user_data_posts_content svg{
+    width:23px;
+}
+
+.profile_user_data_posts_content span{
+        display: flex;
+    margin: 1px 10px;
+    font-family: system-ui;
+    font-weight: 500;
+}

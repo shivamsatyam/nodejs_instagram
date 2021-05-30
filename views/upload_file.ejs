@@ -1,0 +1,81 @@
+<!-- <link rel="stylesheet" type="text/css" href="/css/ck_contents.css"> -->
+<div class="upload_file_container" style="display:none">
+        <div class="upload_file_box" id="upload_file_image">
+                Image
+        </div>
+        <div class="upload_file_box">Video</div>
+        <div class="upload_file_box" id="upload_file_story">story</div>
+        <div class="upload_file_box" id="upload_file_close" style="color:deeppink;">close</div>
+</div>
+
+<div class="upload_image_main" style="display: none">
+<form action="/upload-image" method="post" id="upload_image_form" enctype="multipart/form-data">
+		<div class="upload_image_box">
+	<div class="upload_image_box_select_image">
+		<h2>Select image</h2>
+		<img src="/img/ic_home_48px-256.webp" alt="" id="upload_image_img" >
+	</div>
+
+	<div class="upload_image_choose_file" style="text-align: center;">
+		<input type="file" id="upload_image_input" name="file" required>
+		
+	</div>
+
+
+	<div class="upload_file_progress">
+		<progress max="100" value="0"></progress>
+	</div>
+
+	<div class="upload_image_data">
+		<label for="">Enter a title</label>
+		<input type="text" name="title" id="upload_image_title" required>
+
+		<label for="">Enter a decription</label>
+		<textarea id="upload_image_desc" name="desc" required></textarea>
+	</div>
+
+
+
+
+	<div class="upload_image_box_btn">
+		<button id="upload_image_save_btn" type="submit">&check;</button>
+		<button id="upload_image_close_btn">&#x2716;</button>
+	</div>
+
+</div>
+
+</form>
+</div>
+
+
+<div class="upload_story_main" style="display:none">
+	<div class="upload_story_box">
+			<form class="upload_story_container">
+		
+		<textarea name="content" id="content" required></textarea>
+		
+		<div class="upload_story_function">
+			<label for="">Enter a title</label>	
+			<input type="text" name="topic" placeholder="write your topic" required>
+
+		<div style="display: flex; justify-content: flex-end;">
+			<button type="submit">&check;</button>
+		<button id="upload_story_close_btn">&#x2716;</button>
+		</div>
+		</div>
+	</form>	
+	</div>
+	
+</div>
+
+
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script src="/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/js/cropper.js"></script>
+<script type="text/javascript" src="/js/upload_file.js"></script>
+	<script>
+	// CKEDITOR.instances.content.getData()
+
+		CKEDITOR.replace('content')
+	</script>
