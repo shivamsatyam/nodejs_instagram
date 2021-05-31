@@ -25,7 +25,7 @@ app.use(session({
  	resave:false,
  	saveUninitialized:true,
  	store:new MongoStore({
- 		url:'mongodb://localhost:27017/instagram',
+ 		url:'mongodb+srv://shivamsatyam:shivamsatyam123@cluster0.hrigk.mongodb.net/shivamInstagram?retryWrites=true&m=majority',
  		mongooseConnection:mongoose.connection,
  		ttl:14*24*60*60
  	})
@@ -40,7 +40,7 @@ app.use(express.static(static_path))
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
-mongoose.connect('mongodb://localhost:27017/instagram',{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false}).then(()=>{
+mongoose.connect('mongodb+srv://shivamsatyam:shivamsatyam123@cluster0.hrigk.mongodb.net/shivamInstagram?retryWrites=true&m=majority',{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false}).then(()=>{
 	console.log('the connection is succesfully established')
 })
 
@@ -138,9 +138,51 @@ app.get('/profile',isLoggedIn,(req,res)=>{
 
 })
 
+app.get('/show-profile/:id',isLoggedIn,(req,res)=>{
+	let id = req.params.id
+	userSchema.findOne({'_id':id},(err,data)=>{
+		if(err){throw err}
+		if(data){
+			res.render('profile',{data:data,id:req.user._id})
+		}	
+	})
+
+})
+
+
+
+
 app.get('/follow',isLoggedIn,(req,res)=>{
+
+	let person = []
+
 	userSchema.find({},(err,data)=>{
-		res.render('follow',{id:req.user._id,data:data})
+		console.log('\n\n\n\n\n\nfollow\n\n\n\n')
+		console.log(data)
+
+		userSchema.findOne({_id:req.user.id},(err,docs)=>{
+			let following = JSON.parse(docs.following)
+
+			for (let i=0;i<following.length;i++) {
+				
+					for(let j=0;j<data.length;j++){
+
+						if(String(following[i].follow_id)==String(data[j]._id)){
+
+						}else{
+							person.push(data[j])
+						}
+
+					}		
+			}
+
+		})
+
+
+		console.log('\n\n\n\n\n person \n\n\n\n\n\n')
+		console.log(person)
+
+		res.render('follow',{id:req.user._id,data:person})
 
 	})
 })
@@ -387,6 +429,15 @@ app.get('/image-data/:id',(req,res)=>{
 				data:data
 			})
 		}	
+	})
+})
+
+
+app.get('/alldata',(req,res)=>{
+	userSchema.find({},(err,data)=>{
+		res.json({
+			data:data
+		})
 	})
 })
 

@@ -75,8 +75,10 @@ follow_suggested_box.forEach((item) => {
 
 
 follow_suggested_btn.forEach((item) => {
+
 	
   	item.addEventListener('click',(e) => {
+		item.parentNode.parentNode.style.display = 'none'
   		item.disabled = true
   		let follow_id = item.parentNode.querySelector('small').innerText
 

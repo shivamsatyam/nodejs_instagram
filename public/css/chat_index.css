@@ -292,7 +292,7 @@ width: 20px;
 }
 
 .hamburger-child{
-        border: 2px solid black;
+        border: 2px solid white;
     margin-top: 7px;
 }
 
@@ -303,7 +303,7 @@ width: 20px;
 }
 .sidebar_cross_child{
       width: 28px;
-    border: 2px solid;  
+    border: 2px solid white;  
 }
 
 

@@ -46,14 +46,14 @@
 	<div class="user">
                         <div class="profile">
                 <div class="image">
-                        <img src="/img/download (5).jpeg" alt="">
+                        <img src="<%=data.image%>" alt="">
                 </div>
 
 
         <div class="info">
                 <div class="name">
                         <h2 id="profile-name"><%=data.name%></h2>
-                        <button id="edit_profile_btn">Edit Profile</button>
+                        <button style="display:none;" id="edit_profile_btn">Edit Profile</button>
                 </div>
 
                 <div class="about">
@@ -81,8 +81,8 @@
 
         <div class="profile_user_data">
                 <div class="profile_user_data_type">
-                        <div class="profile_user_data_box" id="profile_post">Posts</div>
-                        <div class="profile_user_data_box" id="profile_story">Story</div>
+                        <div style="display:none;" class="profile_user_data_box" id="profile_post">Posts</div>
+                        <div style="display:none;" class="profile_user_data_box" id="profile_story">Story</div>
 
                 </div>
                  
@@ -111,9 +111,8 @@
 
 
 <script>
-
 let navbar_add_btn = document.getElementById('navbar_add_btn')
-let mobile_add = document.getElementById('mobile_add')
+let mobile_add_btn = document.getElementById('mobile_add_btn')
 
 let upload_file_container = document.querySelector('.upload_file_container')
 
@@ -124,7 +123,7 @@ navbar_add_btn.addEventListener('click',(e) => {
     upload_file_container.style.display = 'flex'
 });
 
-mobile_add.addEventListener('click',(e) => {
+mobile_add_btn.addEventListener('click',(e) => {
     upload_file_container.style.display = 'flex'
 });
 
@@ -132,8 +131,6 @@ upload_file_close.addEventListener('click',(e)=>{
     upload_file_container.style.display = 'none'
 
 })
-
-
 
 
 </script>

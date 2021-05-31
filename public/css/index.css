@@ -200,6 +200,149 @@
 
 
 
+@media (max-width: 1090px) {
+    .profile{
+            flex-direction: column;
+    }
+
+    .image{
+            justify-content: center;
+    }
+
+    .name{
+        justify-content: center;
+    margin: 15px 0px;
+    }
+
+
+    .name button{
+        display:none;
+    }
+
+    .about{
+        justify-content: center;
+    }
+
+    .followers{
+        flex-direction:column;
+    }
+
+    .following{
+       flex-direction:column;
+       
+    }
+
+    .posts{
+       flex-direction:column;
+       
+    }
+    .profile_user_data_posts_box img{
+            height: 325px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .profile_user_data_posts{
+            display: flex;
+        flex-direction: column;
+    }
+
+    .info{
+        margin-left:0px;
+    }
+
+
+    .profile_user_data_posts_box{
+        max-width:1000px;
+    }
+
+}
+
+
+
+
+@media (max-width: 1000px) {
+        .upload_image_main form{
+                min-width: 12px;
+    max-width: 912px;
+    margin: auto;
+    min-height: 34px;
+        }
+
+
+        .upload_image_box{
+                min-width: 12px;
+    max-width: 912px;
+    margin: auto;
+    min-height: 34px;
+        }
+
+
+
+
+        .upload_image_box_select_image{
+            height:100%;
+        }
+
+        .upload_image_box_select_image img {
+
+                max-height: 218px;
+    min-height: 12px;
+        }
+
+
+        .upload_image_box_btn button {
+                height: 27px;
+    width: 26px;
+        }
+
+.upload_image_data textarea{
+    height:50px !important;
+}
+
+.upload_image_box_select_image {
+    width:100%;
+        max-height: 246px;
+}
+
+
+
+
+
+.main_box{
+        flex-direction: column;
+}
+
+
+.main_box_first img{
+        max-height: 221px;
+}
+
+.main_box_second_top{
+    padding: 2px 5px;
+}
+
+
+.main_box_second_medium{
+        overflow: scroll;
+    height: 62px;
+}
+
+
+.main_comment{
+        height: 74px !important;
+}
+
+
+.main_like{
+    height: 34px;
+}
+
+
+
+
+}
+
 
 
 
